@@ -36,6 +36,7 @@ yargs
   .command([ 'checkout', 'co' ], `Checks out a branch`, yargs => require('./lib/checkout').checkout(yargs, gutOptions))
   .command([ 'clone', 'cl' ], `Clones a repository`, yargs => require('./lib/clone').clone(yargs, gutOptions))
   .command([ 'commit', 'c' ], `Commits the staged changes`, yargs => require('./lib/commit').commit(yargs))
+  .command([ 'delete', 'd' ], `Deletes an item (branch, tag, stash entry)`, yargs => require('./lib/delete').delete(yargs))
   .command([ 'inspect', 'i' ], `Displays impacts on code base`, yargs => require('./lib/inspect').inspect(yargs, os))
   .command([ 'log', 'l' ], `Displays the commit's history`, yargs => require('./lib/log').log(yargs))
   .command([ 'push', 'p' ], `Pushes local changes to a remote`, yargs => require('./lib/push').push(yargs))
