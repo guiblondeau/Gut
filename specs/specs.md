@@ -20,6 +20,7 @@ Make sure you read the section __Getting started__ before the rest so you are aw
   * [Checkout](#checkout)
   * [Clone](#clone)
   * [Commit](#commit)
+  * [Delete](#delete)
   * [Inspect](#inspect)
   * [Log](#log)
   * [Push](#push)
@@ -238,6 +239,26 @@ commit message, otherwise it will be seen as a parameter to the gut command.
 * `gut commit -c`will create a commit with a message set to `:eyes: Code review`.
 
 The commit should fail if the user has unstaged changes.
+
+## Delete
+
+Usage: `gut delete -b master_deleteSpec -r o`
+
+Deletes an item on the specified remote. Can delete branches and tags.
+
+Arguments:
+  * `-r` The remote where the item should be deleted, defaults to `local`. Can be:
+    * local: if not defined or in `['l', 'local']`)
+    * origin: if in `['o', 'origin']`
+    * upstream: if in `['u', 'upstream']`
+  * `-b` The name of the branch to delete. Exclusive with `-t`
+  * `-t` The name of the tag to delete. Exclusive with `-b`
+
+Examples:
+  * `gut delete -b master_deleteSpec`: deletes the branch `master_deleteSpec` locally.
+  Literally does `git branch -D master_deleteSpec`
+  * `gut delete -t v1.2.3 -r o` deletes the tag `v1.2.3` on `origin`.
+  Literally does `git push --delete origin v1.2.3`
 
 ## Inspect
 
