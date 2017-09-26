@@ -181,7 +181,7 @@ Arguments:
 
 Example output:
 
-![Inspect output](./images/inspect_output.png)
+![Inspect output](./images/audit_output.png)
 
 ## Divisions
 
